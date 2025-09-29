@@ -28,6 +28,16 @@
     z-index: 1000;
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cor-texto-principal);
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
 .title {
     font-size: 26px;
     font-weight: 900;
@@ -77,4 +87,122 @@
     width: 100%;
     font-size: 19px;
     font-weight: 900;
+}
+
+@media (max-width: 900px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .links-container {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 16px;
+        position: static;
+    }
+
+    .title {
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+
+
+    .links-container {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--cor-fundo);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1001;
+        padding: 10px 0;
+    }
+
+    .links-container.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        position: static;
+        align-items: center;
+        margin-left: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1100;
+        top: 10px;
+        right: 10px;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 28px;
+        height: 4px;
+        background-color: var(--cor-texto-principal);
+        border-radius: 2px;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    .title {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .header-link {
+        font-size: 14px;
+        padding: 4px 0;
+    }
+
+    .footer {
+        font-size: 14px;
+        padding: 10px 0;
+        position: static;
+    }
+}
+
+@media (min-width: 1400px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .footer {
+        font-size: 22px;
+    }
 }
