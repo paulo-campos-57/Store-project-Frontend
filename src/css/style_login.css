@@ -30,8 +30,123 @@
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 20%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+}
+
+.input-field {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 4px;
+    background-color: var(--cor-background);
+    color: var(--cor-texto-principal);
+}
+
+.input-field::placeholder {
+    color: var(--cor-secundaria);
+}
+
+.password-container {
+    position: relative;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.password-container i {
+    color: white;
+}
+
+.password-container .input-field {
+    width: 100%;
+    margin: 10px 0;
+}
+
+#password-input::-ms-reveal,
+#password-input::-ms-clear {
+    display: none;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--cor-secundaria);
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.login-button {
+    width: 40%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--cor-destaque);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: var(--cor-texto-principal);
+    color: var(--cor-fundo);
+}
+
+.clear-button {
+    width: 40%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--cor-texto-principal);
+    color: var(--cor-fundo);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clear-button:hover {
+    background-color: var(--cor-destaque);
+    color: white;
+}
+
+.form-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.form-link {
+    color: var(--cor-destaque);
+    text-decoration: none;
+    position: relative;
+}
+
+.form-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--cor-destaque);
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-link:hover::after {
+    transform: scaleX(1);
 }

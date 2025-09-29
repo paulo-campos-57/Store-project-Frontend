@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/style_login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Store - Login</title>
 </head>
 
@@ -23,10 +26,19 @@
             <p>Please login to your account</p>
         </div>
         <form action="#" class="login-form">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum vitae quam animi, cumque nihil soluta
-            error atque cupiditate blanditiis. Numquam odit incidunt harum voluptatum aliquam. Dolore, blanditiis? Ipsa
-            illum ea omnis aut explicabo totam nulla consequatur architecto aliquid, non fugiat rem magnam deleniti
-            tempora quae nisi autem nihil corporis repellat?
+            <input type="text" placeholder="Username" class="input-field" required>
+            <div class="password-container">
+                <input type="password" placeholder="Password" class="input-field" id="password-input" required>
+                <button type="button" class="toggle-password" id="toggle-password">
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="login-button">Login</button>
+                <button type="button" class="clear-button">Clear</button>
+            </div>
+            <p class="form-text">Don't have an account? <a href="#" class="form-link">Sign Up</a></p>
+            <p class="form-text">Forgot your password? <a href="#" class="form-link">Click Here</a></p>
         </form>
     </div>
     <div class="footer">
