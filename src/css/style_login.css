@@ -1,0 +1,37 @@
+:root {
+    --cor-fundo: #1E1E1E;
+    --cor-background: #0e0e0e;
+    --cor-texto-principal: #E0E0E0;
+    --cor-destaque: #007BFF;
+    --cor-secundaria: #495057;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--cor-background);
+    color: var(--cor-texto-principal);
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-form {
+    background-color: var(--cor-fundo);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
