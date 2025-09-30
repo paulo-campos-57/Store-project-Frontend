@@ -12,6 +12,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .header {
@@ -82,8 +83,6 @@
     color: var(--cor-texto-principal);
     text-align: center;
     padding: 15px 0;
-    position: fixed;
-    bottom: 0;
     width: 100%;
     font-size: 19px;
     font-weight: 900;

@@ -12,7 +12,6 @@
     align-items: center;
     padding-top: 100px;
     padding-bottom: 80px;
-    min-height: 92vh;
     background-color: var(--cor-background);
     color: var(--cor-texto-principal);
 }
@@ -26,7 +25,57 @@
     gap: 10px;
 }
 
-.login-form {
+.password-requirements {
+    background-color: var(--cor-fundo);
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 40%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.password-requirements h3 {
+    margin-top: 0;
+    color: var(--cor-destaque);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.password-requirements ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.password-requirements li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--cor-texto-principal);
+}
+
+#password-rules li {
+    color: #a9a9a9;
+    transition: color 0.3s ease-in-out;
+    font-weight: normal;
+}
+
+#password-rules li::before {
+    content: '❌';
+    margin-right: 8px;
+    display: inline-block;
+}
+
+#password-rules li.valid {
+    color: #28a745;
+    font-weight: 600;
+}
+
+#password-rules li.valid::before {
+    content: '✅';
+}
+
+.pass-form {
     background-color: var(--cor-fundo);
     padding: 40px;
     border-radius: 8px;
@@ -89,7 +138,7 @@
     width: 80%;
 }
 
-.login-button {
+.apply-button {
     width: 40%;
     padding: 10px;
     margin-top: 20px;
@@ -102,7 +151,7 @@
     transition: background-color 0.3s ease;
 }
 
-.login-button:hover {
+.apply-button:hover {
     background-color: var(--cor-texto-principal);
     color: var(--cor-fundo);
 }
@@ -152,55 +201,22 @@
     transform: scaleX(1);
 }
 
-@media (max-width: 900px) {
-    .login-form {
-        width: 70%;
-        padding: 30px;
-    }
-
-    .button-container {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .login-button,
-    .clear-button {
-        width: 80%;
-        margin-top: 10px;
-    }
-
-    .input-field,
-    .password-container {
-        width: 100%;
-    }
+.message {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
 }
 
-@media (max-width: 600px) {
-    .container {
-        min-height: 90vh;
-        padding: 10px;
-    }
-
-    .login-form {
-        width: 100%;
-        padding: 15px;
-        border-radius: 0;
-        box-shadow: none;
-    }
-
-    .welcome h2 {
-        font-size: 1.4rem;
-    }
-
-    .form-text {
-        font-size: 12px;
-    }
+.message.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
 }
 
-@media (min-width: 1400px) {
-    .login-form {
-        width: 30%;
-        max-width: 500px;
-    }
+.message.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
 }
