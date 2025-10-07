@@ -93,7 +93,7 @@ body {
 
 .founders-table th {
     background-color: var(--cor-destaque, #007BFF);
-    color: white;
+    color: rgb(10, 7, 7);
 }
 
 .footer-content {
