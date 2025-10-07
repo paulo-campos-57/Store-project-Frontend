@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/style_register.css">
+    <title>Store - Cadastro de Cliente</title>
+</head>
+
+<body>
+    <div class="header">
+        <img src="https://via.placeholder.com/150x50.png?text=Logo+Empresa" alt="Logo da Empresa" class="logo">
+        <div class="title">Cadastro de Clientes</div>
+        <button class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+
+    <main class="container-cadastro">
+        <form id="cadastroForm" class="cadastro-form" onsubmit="return false;">
+
+            <div class="form-group">
+                <label for="email">Email (Login):</label>
+                <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmarSenha">Confirmar Senha:</label>
+                <input type="password" id="confirmarSenha" name="confirmarSenha" required>
+            </div>
+            
+            <div id="regras-senha" class="password-rules">
+                <strong>A senha deve conter:</strong>
+                <ul>
+                    <li>Pelo menos 8 caracteres.</li>
+                    <li>Pelo menos uma letra maiúscula (A-Z).</li>
+                    <li>Pelo menos uma letra minúscula (a-z).</li>
+                    <li>Pelo menos um número (0-9).</li>
+                    <li>Pelo menos um caractere especial.</li>
+                    <li><strong>Permitidos:</strong> @ $ ! % * ? & #</li>
+                    <li><strong>Não Permitidos:</strong> Outros caracteres especiais como ( ) [ ] { } &lt; &gt; / \ |</li>
+                </ul>
+            </div>
+
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
+            </div>
+
+            <div class="form-group">
+                <label for="celular">Celular/WhatsApp (Opcional):</label>
+                <input type="tel" id="celular" name="celular" placeholder="(00) 00000-0000">
+            </div>
+
+            <div class="form-group">
+                <label>Estado Civil:</label>
+                <div class="radio-group">
+                    <input type="radio" id="solteiro" name="estadoCivil" value="solteiro" checked>
+                    <label for="solteiro">Solteiro(a)</label>
+
+                    <input type="radio" id="casado" name="estadoCivil" value="casado">
+                    <label for="casado">Casado(a)</label>
+
+                    <input type="radio" id="divorciado" name="estadoCivil" value="divorciado">
+                    <label for="divorciado">Divorciado(a)</label>
+
+                    <input type="radio" id="viuvo" name="estadoCivil" value="viuvo">
+                    <label for="viuvo">Viúvo(a)</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="escolaridade">Escolaridade:</label>
+                <select id="escolaridade" name="escolaridade">
+                    <option value="1-incompleto">1º Grau Incompleto</option>
+                    <option value="1-completo">1º Grau Completo</option>
+                    <option value="2-completo" selected>2º Grau Completo</option>
+                    <option value="superior">Nível Superior</option>
+                    <option value="pos-graduado">Pós-Graduado</option>
+                </select>
+            </div>
+
+            <div class="button-container">
+                <button type="button" id="btnIncluir" class="btn-primary">Incluir</button>
+                <button type="button" id="btnLimpar" class="btn-secondary">Limpar</button>
+                <button type="button" id="btnVoltar" class="btn-tertiary">Voltar</button>
+            </div>
+        </form>
+    </main>
+
+    <div class="footer">
+        Store &copy; 2025
+    </div>
+
+    <script src="src/js/script.js"></script> <script src="src/js/register.js"></script> </body>
+
+</html>

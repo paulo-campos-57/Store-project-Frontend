@@ -1,0 +1,142 @@
+/* Importa as variáveis e estilos base */
+@import url('style.css');
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    padding-top: 80px; /* Espaço para o header fixo */
+    padding-bottom: 60px; /* Espaço para o footer */
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.container-cadastro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 140px); /* Altura total menos header e footer */
+}
+
+.cadastro-form {
+    background-color: #2a2a2a;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--cor-texto-principal);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group input[type="tel"],
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 5px;
+    background-color: #333;
+    color: var(--cor-texto-principal);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 5px var(--cor-destaque);
+}
+
+.password-rules {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    margin-top: -0.5rem;
+    margin-bottom: 1.2rem;
+    border-left: 3px solid var(--cor-destaque);
+}
+
+.password-rules ul {
+    list-style-position: inside;
+    padding-left: 5px;
+}
+
+.password-rules strong {
+    color: var(--cor-destaque);
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.button-container button {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo);
+}
+
+.btn-primary:hover {
+    background-color: #a8d900;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-principal);
+}
+
+.btn-secondary:hover {
+    background-color: #6c757d;
+    transform: translateY(-2px);
+}
+
+.btn-tertiary {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-principal);
+}
+
+.btn-tertiary:hover {
+    background-color: #6c757d;
+}
