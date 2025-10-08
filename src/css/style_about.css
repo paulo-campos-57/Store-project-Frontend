@@ -1,35 +1,35 @@
 @import url('style.css');
 
 body {
-    background-color: var(--cor-background, #0e0e0e); 
-    color: var(--cor-texto-principal, #E0E0E0);      
-    padding-top: 80px; 
+    background-color: var(--cor-background, #0e0e0e);
+    color: var(--cor-texto-principal, #E0E0E0);
+    padding-top: 80px;
 }
 
 .main-content {
     max-width: 1200px;
-    margin: 0 auto; 
+    margin: 0 auto;
     padding: 20px;
 }
 
 .about-section {
-    background-color: var(--cor-fundo, #1E1E1E); 
+    background-color: var(--cor-fundo, #1E1E1E);
     padding: 30px;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .about-section h2 {
-    color: var(--cor-destaque, #007BFF); 
+    color: var(--cor-destaque, #007BFF);
     margin-bottom: 20px;
-    border-bottom: 2px solid var(--cor-secundaria, #495057); 
+    border-bottom: 2px solid var(--cor-secundaria, #495057);
     padding-bottom: 10px;
 }
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; 
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
 }
@@ -44,8 +44,8 @@ body {
 
 .gallery-container {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 15px; 
+    flex-wrap: wrap;
+    gap: 15px;
     justify-content: center;
 }
 
@@ -58,7 +58,7 @@ body {
 }
 
 .gallery-container img:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
 }
 
@@ -68,11 +68,16 @@ body {
     gap: 20px;
 }
 
+.services-list h3 {
+    color: var(--cor-destaque, #007BFF);
+}
+
 .service-item {
     background-color: var(--cor-background, #0e0e0e);
     padding: 20px;
     border-radius: 5px;
-    border-left: 4px solid var(--cor-destaque, #007BFF);
+    border-right: 4px solid var(--cor-destaque, #007BFF);
+
 }
 
 .service-item h3 {
@@ -81,11 +86,12 @@ body {
 
 .founders-table {
     width: 100%;
-    border-collapse: collapse; 
+    border-collapse: collapse;
     margin-top: 20px;
 }
 
-.founders-table th, .founders-table td {
+.founders-table th,
+.founders-table td {
     border: 1px solid var(--cor-secundaria, #495057);
     padding: 12px;
     text-align: left;
@@ -98,7 +104,7 @@ body {
 
 .footer-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     max-width: 1200px;
@@ -109,6 +115,7 @@ body {
 .footer-section {
     flex: 1;
     min-width: 250px;
+    text-align: left;
 }
 
 .footer-section h4 {
@@ -130,20 +137,22 @@ body {
 }
 
 .payment-icons {
-    font-size: 2rem; 
+    font-size: 2rem;
     display: flex;
     gap: 15px;
+    justify-content: flex-start;
 }
 
 .footer-bottom {
     border-top: 1px solid var(--cor-secundaria);
     padding-top: 15px;
     margin-top: 15px;
+    text-align: center;
 }
 
 @media (max-width: 600px) {
     body {
-        padding-top: 60px; 
+        padding-top: 60px;
     }
 
     .about-section {
