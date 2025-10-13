@@ -11,8 +11,11 @@
 
 <body>
     <div class="header">
-        <img src="https://via.placeholder.com/150x50.png?text=Logo+Empresa" alt="Logo da Empresa" class="logo">
-        <div class="title">Cadastro de Clientes</div>
+        <div class="title">Store</div>
+        <div class="links-container">
+            <a href="index.html" class="header-link">Home</a>
+            <a href="about.html" class="header-link">About</a>
+        </div>
         <button class="menu-toggle" id="menu-toggle">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -29,31 +32,31 @@
             </div>
 
             <div class="form-group">
-                <label for="senha">Senha:</label>
+                <label for="senha">Password:</label>
                 <input type="password" id="senha" name="senha" required>
             </div>
 
             <div class="form-group">
-                <label for="confirmarSenha">Confirmar Senha:</label>
+                <label for="confirmarSenha">Confirm your password:</label>
                 <input type="password" id="confirmarSenha" name="confirmarSenha" required>
             </div>
 
             <div id="regras-senha" class="password-rules">
-                <strong>A senha deve conter:</strong>
+                <strong>The password must include:</strong>
                 <ul>
-                    <li>Pelo menos 8 caracteres.</li>
-                    <li>Pelo menos uma letra maiúscula (A-Z).</li>
-                    <li>Pelo menos uma letra minúscula (a-z).</li>
-                    <li>Pelo menos um número (0-9).</li>
-                    <li>Pelo menos um caractere especial.</li>
-                    <li><strong>Permitidos:</strong> @ $ ! % * ? & #</li>
-                    <li><strong>Não Permitidos:</strong> Outros caracteres especiais como ( ) [ ] { } &lt; &gt; / \ |
+                    <li>At least 8 characters.</li>
+                    <li>At least one capital letter (A-Z).</li>
+                    <li>At least one lowercase letter (a-z).</li>
+                    <li>At least one number(0-9).</li>
+                    <li>At least one special character.</li>
+                    <li><strong>Allowed:</strong> @ $ ! % * ? & #</li>
+                    <li><strong>Not Allowed:</strong> Other special characters like ( ) [ ] { } &lt; &gt; / \ |
                     </li>
                 </ul>
             </div>
 
             <div class="form-group">
-                <label for="nome">Nome Completo:</label>
+                <label for="nome">Full name:</label>
                 <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
             </div>
 
@@ -63,47 +66,48 @@
             </div>
 
             <div class="form-group">
-                <label for="dataNascimento">Data de Nascimento:</label>
+                <label for="dataNascimento">Date of birth:</label>
                 <input type="date" id="dataNascimento" name="dataNascimento" required>
             </div>
 
             <div class="form-group">
-                <label for="celular">Celular/WhatsApp (Opcional):</label>
+                <label for="celular">Cell phone/WhatsApp (Opcional):</label>
                 <input type="tel" id="celular" name="celular" placeholder="(00) 00000-0000">
             </div>
 
             <div class="form-group">
-                <label>Estado Civil:</label>
+                <label>Marital status:</label>
                 <div class="radio-group">
                     <input type="radio" id="solteiro" name="estadoCivil" value="solteiro" checked>
-                    <label for="solteiro">Solteiro(a)</label>
+                    <label for="solteiro">Single</label>
 
                     <input type="radio" id="casado" name="estadoCivil" value="casado">
-                    <label for="casado">Casado(a)</label>
+                    <label for="casado">Married</label>
 
                     <input type="radio" id="divorciado" name="estadoCivil" value="divorciado">
-                    <label for="divorciado">Divorciado(a)</label>
+                    <label for="divorciado">Divorced</label>
 
                     <input type="radio" id="viuvo" name="estadoCivil" value="viuvo">
-                    <label for="viuvo">Viúvo(a)</label>
+                    <label for="viuvo">Widow</label>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="escolaridade">Escolaridade:</label>
+                <label for="escolaridade">Level of Education:</label>
                 <select id="escolaridade" name="escolaridade">
-                    <option value="1-incompleto">1º Grau Incompleto</option>
-                    <option value="1-completo">1º Grau Completo</option>
-                    <option value="2-completo" selected>2º Grau Completo</option>
-                    <option value="superior">Nível Superior</option>
-                    <option value="pos-graduado">Pós-Graduado</option>
+                    <option value="1-incompleto">Incomplete Elementary School</option>
+                    <option value="1-completo">Completed Elementary School</option>
+                    <option value="2-completo" selected>Incomplete High School</option>
+                    <option value="2-completo" selected>High School Graduate or equivalent</option>
+                    <option value="superior">Undergraduate Degree</option>
+                    <option value="pos-graduado">Postgraduate Degree</option>
                 </select>
             </div>
 
             <div class="button-container">
-                <button type="button" id="btnIncluir" class="btn-primary">Incluir</button>
-                <button type="button" id="btnLimpar" class="btn-secondary">Limpar</button>
-                <button type="button" id="btnVoltar" class="btn-tertiary">Voltar</button>
+                <button type="button" id="btnIncluir" class="btn-primary">Register</button>
+                <button type="button" id="btnLimpar" class="btn-secondary">Clear</button>
+                <button type="button" id="btnVoltar" class="btn-tertiary">Back</button>
             </div>
         </form>
     </main>

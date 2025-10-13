@@ -38,7 +38,8 @@ body {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: var(--cor-texto-principal);
+    color: var(--cor-destaque);
+    font-size: 1.1rem;
 }
 
 .form-group input[type="text"],
@@ -71,7 +72,8 @@ body {
     font-size: 0.85rem;
     margin-top: -0.5rem;
     margin-bottom: 1.2rem;
-    border-left: 3px solid var(--cor-destaque);
+    border-left: 3px solid var(--cor-texto-principal);
+    color: #a2a2a2
 }
 
 .password-rules ul {
@@ -80,7 +82,7 @@ body {
 }
 
 .password-rules strong {
-    color: var(--cor-destaque);
+    color: var(--cor-texto-principal);
 }
 
 .radio-group {
@@ -92,6 +94,12 @@ body {
 
 .radio-group input[type="radio"] {
     margin-right: 5px;
+}
+
+.radio-group label{
+    color: var(--cor-texto-principal);
+    font-size: 1rem;
+    font-weight: 1000;
 }
 
 .button-container {

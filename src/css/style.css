@@ -17,7 +17,7 @@
 
 .header {
     background-color: var(--cor-fundo);
-    color: var(--cor-texto-principal);
+    color: var(--cor-destaque);
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
