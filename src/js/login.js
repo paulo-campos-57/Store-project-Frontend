@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (foundUser) {
             if (foundUser.password === password) {
                 alert(`Login bem-sucedido! Bem-vindo, ${username}!`);
-                window.location.href = 'index.html';
+                window.location.href = 'logged.html';
             } else {
                 alert('Usuário ou senha incorretos.');
             }
