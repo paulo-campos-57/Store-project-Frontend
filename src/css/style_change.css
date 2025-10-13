@@ -2,7 +2,7 @@
     --cor-fundo: #1E1E1E;
     --cor-background: #0e0e0e;
     --cor-texto-principal: #E0E0E0;
-    --cor-destaque: #007BFF;
+    --cor-destaque: #bfff00;
     --cor-secundaria: #495057;
 }
 
@@ -138,40 +138,24 @@
     width: 80%;
 }
 
-.apply-button {
-    width: 40%;
-    padding: 10px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--cor-destaque);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.apply-button:hover {
-    background-color: var(--cor-texto-principal);
-    color: var(--cor-fundo);
-}
-
+.apply-button,
 .clear-button {
     width: 40%;
     padding: 10px;
     margin-top: 20px;
     border: none;
     border-radius: 4px;
-    background-color: var(--cor-texto-principal);
-    color: var(--cor-fundo);
+    background-color: var(--cor-destaque);
+    color: #000;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+.apply-button:hover,
 .clear-button:hover {
-    background-color: var(--cor-destaque);
-    color: white;
+    background-color: var(--cor-texto-principal);
+    color: var(--cor-fundo);
 }
 
 .form-text {
