@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // --- SELETORES DOS ELEMENTOS ---
     const form = document.getElementById('cadastroForm');
     const emailInput = document.getElementById('email');
     const senhaInput = document.getElementById('senha');
@@ -9,19 +8,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const cpfInput = document.getElementById('cpf');
     const dataNascimentoInput = document.getElementById('dataNascimento');
     const celularInput = document.getElementById('celular');
-    
+    const escolaridadeSelect = document.getElementById('escolaridade');
+
     const btnIncluir = document.getElementById('btnIncluir');
     const btnLimpar = document.getElementById('btnLimpar');
     const btnVoltar = document.getElementById('btnVoltar');
 
-    // --- EVENT LISTENERS ---
     btnIncluir.addEventListener('click', validarFormulario);
     btnLimpar.addEventListener('click', limparFormulario);
     btnVoltar.addEventListener('click', () => {
-        window.history.back();
+        window.location.href = 'login.html';
     });
 
-    // --- MÁSCARAS DE CAMPO ---
     cpfInput.addEventListener('input', (e) => {
         let value = e.target.value.replace(/\D/g, '');
         value = value.replace(/(\d{3})(\d)/, '$1.$2');
@@ -33,33 +31,62 @@ document.addEventListener('DOMContentLoaded', function () {
     celularInput.addEventListener('input', (e) => {
         let value = e.target.value.replace(/\D/g, '');
         if (value.length > 10) {
-             value = value.replace(/^(\d\d)(\d{5})(\d{4}).*/,"($1) $2-$3");
+            value = value.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
         } else if (value.length > 5) {
-             value = value.replace(/^(\d\d)(\d{4})(\d{0,4}).*/,"($1) $2-$3");
+            value = value.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
         } else if (value.length > 2) {
-             value = value.replace(/^(\d\d)(\d{0,5}).*/,"($1) $2");
+            value = value.replace(/^(\d\d)(\d{0,5}).*/, "($1) $2");
         } else {
-             value = value.replace(/^(\d*)/, "($1");
+            value = value.replace(/^(\d*)/, "($1");
         }
         e.target.value = value;
     });
-
-    // --- FUNÇÕES ---
 
     function limparFormulario() {
         form.reset();
         emailInput.focus();
     }
 
+    function salvarDados() {
+        const usuarios = JSON.parse(localStorage.getItem('users')) || [];
+
+        const email = emailInput.value;
+
+        const emailExiste = usuarios.some(user => user.email === email);
+        if (emailExiste) {
+            alert('Este e-mail já está cadastrado. Por favor, utilize outro.');
+            emailInput.focus();
+            return;
+        }
+
+        const novoUsuario = {
+            username: email,
+            password: senhaInput.value,
+            email: email,
+            nomeCompleto: nomeInput.value,
+            cpf: cpfInput.value,
+            dataNascimento: dataNascimentoInput.value,
+            celular: celularInput.value,
+            estadoCivil: document.querySelector('input[name="estadoCivil"]:checked').value,
+            escolaridade: escolaridadeSelect.value
+        };
+
+        usuarios.push(novoUsuario);
+
+        localStorage.setItem('users', JSON.stringify(usuarios));
+
+        alert('Cadastro realizado com sucesso!');
+        limparFormulario();
+    }
+
+
     function validarFormulario() {
-        // Validação do Email
         if (emailInput.value.trim() === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
             alert('Por favor, insira um e-mail válido.');
             emailInput.focus();
             return;
         }
 
-        // Validação da Senha
         const senha = senhaInput.value;
         const regexSenha = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
         if (!regexSenha.test(senha)) {
@@ -68,14 +95,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Validação da Confirmação de Senha
         if (senha !== confirmarSenhaInput.value) {
             alert('As senhas não coincidem.');
             confirmarSenhaInput.focus();
             return;
         }
-        
-        // Validação do Nome
+
         const nome = nomeInput.value.trim();
         const palavrasNome = nome.split(' ');
         if (nome === '') {
@@ -95,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Validação do CPF
         if (cpfInput.value.trim() === '') {
             alert('O campo CPF é obrigatório.');
             cpfInput.focus();
@@ -107,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Validação da Data de Nascimento
         if (dataNascimentoInput.value.trim() === '') {
             alert('A data de nascimento é obrigatória.');
             dataNascimentoInput.focus();
@@ -126,7 +149,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Validação do Celular (Opcional)
         if (celularInput.value.trim() !== '') {
             const celularLimpo = celularInput.value.replace(/\D/g, '');
             if (celularLimpo.length < 10 || celularLimpo.length > 11) {
@@ -135,15 +157,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
         }
-        
-        // Se todas as validações passarem
-        alert('Validação realizada com sucesso!');
+
+        salvarDados();
     }
 
     function validarDigitoCPF(cpf) {
         cpf = cpf.replace(/[^\d]+/g, '');
         if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
-        let soma = 0, resto;
+        let soma = 0,
+            resto;
         for (let i = 1; i <= 9; i++) soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
         resto = (soma * 10) % 11;
         if ((resto === 10) || (resto === 11)) resto = 0;
