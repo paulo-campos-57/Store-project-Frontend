@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const emailExiste = usuarios.some(user => user.email === email);
         if (emailExiste) {
-            alert('Este e-mail já está cadastrado. Por favor, utilize outro.');
+            alert('This email is already registered. Please use another one.');
             emailInput.focus();
             return;
         }
@@ -75,14 +75,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         localStorage.setItem('users', JSON.stringify(usuarios));
 
-        alert('Cadastro realizado com sucesso!');
+        alert('Registration successful!');
         limparFormulario();
     }
 
 
     function validarFormulario() {
         if (emailInput.value.trim() === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-            alert('Por favor, insira um e-mail válido.');
+            alert('Please enter a valid email.');
             emailInput.focus();
             return;
         }
@@ -90,13 +90,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const senha = senhaInput.value;
         const regexSenha = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
         if (!regexSenha.test(senha)) {
-            alert('A senha não atende aos critérios de segurança. Verifique as regras.');
+            alert('The password does not meet the security criteria. Please check the rules.');
             senhaInput.focus();
             return;
         }
 
         if (senha !== confirmarSenhaInput.value) {
-            alert('As senhas não coincidem.');
+            alert('The passwords do not match.');
             confirmarSenhaInput.focus();
             return;
         }
@@ -104,35 +104,35 @@ document.addEventListener('DOMContentLoaded', function () {
         const nome = nomeInput.value.trim();
         const palavrasNome = nome.split(' ');
         if (nome === '') {
-            alert('O campo Nome é obrigatório.');
+            alert('The Name field is required.');
             nomeInput.focus();
             return;
         }
         if (palavrasNome.length < 2 || palavrasNome[0].length < 2) {
-            alert('O nome deve conter pelo menos duas palavras, e a primeira deve ter no mínimo 2 caracteres.');
+            alert('The name must contain at least two words, and the first must have at least 2 characters.');
             nomeInput.focus();
             return;
         }
         const regexCaracteresEspeciais = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?0-9]/;
         if (regexCaracteresEspeciais.test(nome)) {
-            alert('O nome não pode conter números ou caracteres especiais.');
+            alert('The name cannot contain numbers or special characters.');
             nomeInput.focus();
             return;
         }
 
         if (cpfInput.value.trim() === '') {
-            alert('O campo CPF é obrigatório.');
+            alert('The CPF field is required.');
             cpfInput.focus();
             return;
         }
         if (!validarDigitoCPF(cpfInput.value)) {
-            alert('O CPF inserido é inválido.');
+            alert('The entered CPF is invalid.');
             cpfInput.focus();
             return;
         }
 
         if (dataNascimentoInput.value.trim() === '') {
-            alert('A data de nascimento é obrigatória.');
+            alert('The date of birth is required.');
             dataNascimentoInput.focus();
             return;
         }
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
             idade--;
         }
         if (idade < 18) {
-            alert('O cliente deve ser maior de 18 anos.');
+            alert('You must be over 18 years old.');
             dataNascimentoInput.focus();
             return;
         }
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (celularInput.value.trim() !== '') {
             const celularLimpo = celularInput.value.replace(/\D/g, '');
             if (celularLimpo.length < 10 || celularLimpo.length > 11) {
-                alert('Se preenchido, o celular deve estar em um formato válido (com DDD).');
+                alert('If filled, the cell phone must be in a valid format (with area code).');
                 celularInput.focus();
                 return;
             }

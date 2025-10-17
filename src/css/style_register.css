@@ -2,10 +2,9 @@
 @import url('style.css');
 
 body {
-    background-color: var(--cor-fundo);
+    background-color: #0e0e0e;
     color: var(--cor-texto-principal);
     padding-top: 80px; /* Espaço para o header fixo */
-    padding-bottom: 60px; /* Espaço para o footer */
 }
 
 .logo {
