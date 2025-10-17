@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Serviços de TI</title>
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/style_logged.css">
-    <title>Store</title>
 </head>
 
 <body>
@@ -23,12 +23,75 @@
         </button>
     </div>
     <div class="container">
-        YELLOW
+
+        <section id="user-section" class="user-info">
+            <h2>Usuário Logado</h2>
+            <div>
+                <label>Nome: <span id="user-name">Carregando...</span></label>
+            </div>
+            <div>
+                <label>Login (E-mail): <span id="user-login">Carregando...</span></label>
+            </div>
+        </section>
+
+        <section id="new-request-section">
+            <h2>Nova Solicitação de Serviço de TI</h2>
+            <form id="new-request-form" class="form-solicitacao">
+                <div class="form-group-flex">
+                    <div>
+                        <label for="service-select">Serviço de TI:</label>
+                        <select id="service-select" required onchange="updateRequestDetails()">
+                            <option value="">-- Selecione um Serviço --</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Preço:</label>
+                        <span id="price-label" class="label-display">R$ 0,00</span>
+                    </div>
+                    <div>
+                        <label>Prazo de Atendimento:</label>
+                        <span id="deadline-label" class="label-display">0 Dias Úteis</span>
+                    </div>
+                    <div>
+                        <label>Data Prevista de Atendimento:</label>
+                        <span id="scheduled-date-label" class="label-display">DD/MM/AAAA</span>
+                    </div>
+                    <div>
+                        <label>Status:</label>
+                        <span id="status-label" class="label-display">EM ELABORAÇÃO</span>
+                    </div>
+                    <div>
+                        <button type="submit" id="add-request-button" disabled>Incluir Solicitação</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section id="requests-section">
+            <h2>Minhas Solicitações Existentes</h2>
+            <table class="solicitacoes-table">
+                <thead>
+                    <tr>
+                        <th>Data do Pedido</th>
+                        <th>Nº Solicitação</th>
+                        <th>Serviço</th>
+                        <th>Status</th>
+                        <th>Preço</th>
+                        <th>Data Prevista</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="requests-body">
+                </tbody>
+            </table>
+        </section>
     </div>
     <div class="footer">
         Store &copy; 2025
     </div>
+
     <script src="src/js/script.js"></script>
+    <script src="src/js/logged.js"></script>
 </body>
 
 </html>
