@@ -46,7 +46,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .gallery-container img {
@@ -60,6 +60,24 @@ body {
 .gallery-container img:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 123, 255, 0.3);
+}
+
+.image-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.tm-name {
+    font-weight: bold;
+    color: var(--cor-destaque, #007BFF);
+}
+
+.tm-email {
+    font-style: italic;
+    color: var(--cor-texto-secundario, #ADB5BD);
 }
 
 .services-list {
