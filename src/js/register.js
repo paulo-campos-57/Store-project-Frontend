@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btnIncluir.addEventListener('click', validarFormulario);
     btnLimpar.addEventListener('click', limparFormulario);
     btnVoltar.addEventListener('click', () => {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     });
 
     cpfInput.addEventListener('input', (e) => {
